@@ -233,6 +233,7 @@ func (srv *Server) buildResponse(reply *message.Reply) (err error) {
 		// do nothing
 		return nil
 	}
+	log.Debugf("reply.MsgType =%s, reply.MsgData=%+v", msgType, reply.MsgData)
 	msgType := reply.MsgType
 	switch msgType {
 	case message.MsgTypeText:
@@ -252,6 +253,7 @@ func (srv *Server) buildResponse(reply *message.Reply) (err error) {
 	value := reflect.ValueOf(msgData)
 	// msgData must be a ptr
 	kind := value.Kind().String()
+	log.Debugf("kind =%s", kind)
 	if kind != "ptr" {
 		return message.ErrUnsupportReply
 	}
