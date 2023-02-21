@@ -242,6 +242,7 @@ func (srv *Server) buildResponse(reply *message.Reply) (err error) {
 	case message.MsgTypeMusic:
 	case message.MsgTypeNews:
 	case message.MsgTypeTransfer:
+	case message.MsgTypeEvent:
 	default:
 		err = message.ErrUnsupportReply
 		return
