@@ -233,8 +233,8 @@ func (srv *Server) buildResponse(reply *message.Reply) (err error) {
 		// do nothing
 		return nil
 	}
-	log.Debugf("reply.MsgType =%s, reply.MsgData=%+v", msgType, reply.MsgData)
 	msgType := reply.MsgType
+	log.Debugf("reply.MsgType =%s, reply.MsgData=%+v", msgType, reply.MsgData)
 	switch msgType {
 	case message.MsgTypeText:
 	case message.MsgTypeImage:
